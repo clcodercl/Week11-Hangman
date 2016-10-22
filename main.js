@@ -3,9 +3,9 @@
 
 //GAME LOGIC
 //files for constructors
-var wordFile = require("word.js");
-var gameFile = require("letter.js");
-var letterFile = require("game.js");
+var wordFile = require(.'/word.js');
+var gameFile = require('./letter.js');
+var letterFile = require('./letter.js');
 var fs = require('fs');
 // npm packages
 

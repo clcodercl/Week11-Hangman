@@ -2,3 +2,7 @@
 
 // WHETHER OR NOT A LETTER APPEARS AS "" OR BY ITSELF ON_SCREEN\
 //This is a constuctor file
+
+function letterGuess
+
+inquirer.prompt
