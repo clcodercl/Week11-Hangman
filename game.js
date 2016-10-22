@@ -10,12 +10,12 @@ var fs = require('fs');
  
 var wordArray = fs.readFileSync(wordListPath, 'utf8').split('\n');
 //=> [..., 'abmhos', 'abnegate', ...] 
-var randomWord = wordArray[Math.floor(Math.random()*randomWord.length)];
+var randomWord = wordArray[Math.floor(Math.random()*wordArray.length)];
 // function GameWord() {
 // 	this.word = [i];
 // 	// selects a random from a list
 // Returns a random number between min (inclusive) and max (exclusive)
-
+console.log(randomWord);
 	
 // //}
 
