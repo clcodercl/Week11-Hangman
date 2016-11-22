@@ -32,3 +32,13 @@ Word.prototype.render = function() {
 		};
 		.join('');
 };
+// Takes Letters and calls .show on each one,
+// collects them into a new array,
+// calls .join to return a string
+Word.prototype.render = function() {
+	return this.letters
+		.map(l => l.render()) {
+			return v.show();
+		};
+		.join('');
+};
