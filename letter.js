@@ -1,8 +1,21 @@
-// letter.js should control whether or not a letter appears as a "_" or as itself on-screen.
 
 // WHETHER OR NOT A LETTER APPEARS AS "" OR BY ITSELF ON_SCREEN\
 //This is a constuctor file
 
-function letterGuess
+// letter concstructor stores character provided
 
-inquirer.prompt
+function Letter(value) {
+	// store value in letter object
+	this.value = value;
+	this.visible = (value === '');
+}
+
+// returns stored character if visible or a blank if not
+
+Letter.prototype.render = function() {
+	
+	//operator below
+	return (this.visible) ? this.value : '_';
+};
+
+module.exports = Letter;
