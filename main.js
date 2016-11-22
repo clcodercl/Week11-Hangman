@@ -73,7 +73,21 @@ var prompt = function() {
         prompt();
 };
 
-
+// restarting a game after it has been completed based on users input
+var newGame = function() {
+    inquirer.prompt([{
+            message: 'Would you like to play another game? (y/n)',
+            type: 'confirm',
+            name: 'restart'
+        }])
+        .then(function(answers) {
+                if (answers.restart) {
+                    prompt();
+                } else {
+                    process.exit();
+                }
+            });
+    };
 
 
 
