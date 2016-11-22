@@ -28,6 +28,56 @@ var inquirer = require('inquirer');
 
 
 
+var userGuesses = [];
+var guessesLeft = 10;
+// initial prompt asking user to play game
+var game = new Game();
+
+function playGame(){
+	inquirer.prompt([
+		{
+			type: 'confirm',
+			name: 'hangman',
+			message: 'Would you like to play Hangman? (y/n)'
+		}
+	]).then(function(userInput){
+		if (userInput.hangman === true){
+			prompt();
+		}else{
+			console.log('Okay.');
+		}
+	})
+};
+
+// prompt if user chooses to play game
+var prompt = function() {
+    inquirer.prompt([{
+            message: 'Guess a letter',
+            type: 'input',
+            name: 'guess',
+            validate: function(input) {
+                if (!input.match([/[a-z]/i])) {
+                    return ('Please choose a letter!');
+                    guessesLeft--
+                } else {
+                    return true;
+                }
+            }
+        }])
+        .then(function(answers) {
+            userGuesses.push(answers.guess);
+            guessesLeft--;
+            console.log('You have ' + guessesLeft + 'remaining!' );
+        });
+
+        prompt();
+};
+
+
+
+
+
+
 
 
 
