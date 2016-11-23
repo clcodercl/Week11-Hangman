@@ -42,3 +42,16 @@ Word.prototype.render = function() {
 		};
 		.join('');
 };
+// Modifiy any correctly guessed letter to set visible to true
+// then it will return true or false depending on if a correct letter was guessed
+Word.prototype.guess = function(guess) {
+	return this.letters
+		.map(function(l) {
+			var match = (guess === l.value);
+			l.visible = l.visible || match;
+			return match;
+		})
+		.some(function(v) {
+			return v;
+		});
+};
