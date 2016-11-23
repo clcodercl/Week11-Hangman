@@ -55,3 +55,12 @@ Word.prototype.guess = function(guess) {
 			return v;
 		});
 };
+// Return true or false depending on if the word has been completely guessed
+Word.prototype.finished = function() {
+	return this.render() === this.value;
+
+};
+//must decrement guesses if they guess wrong
+//console.log or .show to print word on screen
+
+module.exports = Word;
